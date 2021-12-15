@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Accuracy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body{
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufrl7wzeUce6DsEIVvnRx-3Dir1QaR8Cd2w&usqp=CAU');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      .div-bg{
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
+      </div>
+      <div class="nav navbar-nav navbar-left">
+        <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'home' %}" style="color:#ffffff;">Home</a></li>
+            <li><a href="{% url 'index' %}" style="color:#ffffff;">Predict</a></li>
+            <li><a href="{% url 'accuracy' %}" style="color:#ffffff;">Accuracy</a></li>
+            <li><a href="{% url 'code' %}" style="color:#ffffff;">Source Code</a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <div class="container">
+      <div class="div-bg">
+        <center><br><h2 class="display-1 text-primary">TWITTER SENTIMENT ANALYSIS</h2><hr><br><br></center>
+
+        <div class="accordion" id="accordionExample">
+
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h4 class="text-success">Random Forest</h4>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container">
+                <div class="row">
+                        <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                        <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+                </div>
+                </div>
+                <div class="container">
+                <div class="row">
+                        <div class="col-sm-6"><img src="/media/app/rf_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                        <div class="col-sm-6"><img src="/media/app/rf.png" style="width:500px;height:400px;"  alt=""></div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<hr>
+
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h4 class="text-danger">Stochastic Gradient Boosting</h4>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="container">
+                <div class="row">
+                        <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                        <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+                </div>
+                </div>
+                <div class="container">
+                <div class="row">
+                        <div class="col-sm-6"><img src="/media/app/sgd_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                        <div class="col-sm-6"><img src="/media/app/sgd.png" style="width:500px;height:400px;"  alt=""></div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<hr>
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <h4 class="text-primary">Support Vector Classifier </h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/svc_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/svc.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<hr>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <h4 class="text-success">Logistic Regression</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/lr_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/lr.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <h4 class="text-danger">Naive Bayes Classifier</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/nb_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/nb.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<hr>
+
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <h4 class="text-primary">XGBoost</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/xgb_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/xgb.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+        <div class="card">
+          <div class="card-header" id="headingSeven">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                <h4 class="text-success">Decision Tree Classifier</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/dt_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/dt.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+        <div class="card">
+          <div class="card-header" id="headingEight">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                <h4 class="text-danger">Gradient Boosting</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/gb_cm.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/gb.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+        <div class="card">
+          <div class="card-header" id="headingNine">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                <h4 class="text-primary">AdaBoost</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/ad_com.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/ab.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>
+        <div class="card">
+          <div class="card-header" id="headingTen">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                <h4 class="text-success">K-Nearest Neighbors</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="container">
+              <div class="row">
+                      <center><div class="col-sm-6 text-info">CONFUSION MATRIX</div></center>
+                      <center><div class="col-sm-6 text-info">PRECISION-RECALL-F1.SCORE GRAPH</div></center>
+              </div>
+              </div>
+              <div class="container">
+              <div class="row">
+                      <div class="col-sm-6"><img src="/media/app/knn_c.png" style="width:500px;height:400px;"   alt=""></div>
+                      <div class="col-sm-6"><img src="/media/app/knn.png" style="width:500px;height:400px;"  alt=""></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>

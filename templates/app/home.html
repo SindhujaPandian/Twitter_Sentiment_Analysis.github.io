@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
+    </div>
+    <div class="nav navbar-nav navbar-left">
+      <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'home' %}" style="color:#ffffff;">Home</a></li>
+          <li><a href="{% url 'index' %}" style="color:#ffffff;">Predict</a></li>
+          <li><a href="{% url 'accuracy' %}" style="color:#ffffff;">Accuracy</a></li>
+          <li><a href="{% url 'code' %}" style="color:#ffffff;">Source Code</a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron">
+    <center>  <h2 class="text-primary bg-gradient-primary">Twitter Sentiment analysis</h2></center>
+      <br>
+        <p class="text-muted">
+        During this pandemic COVID-19 the only way to communicate to the outer world using social media. Many people share their sentiments in posts, tweets, likes, share, comment, etc., Sentiment analysis (also known as opinion mining) refers to the use of natural language processing, text analysis and computational linguistics to identify and extract subjective information in source materials. People rely on more tweets and post shared on social networking sites like Twitter, Facebook and Instagram. Here Sentiment analysis plays a major role. With the help of this we can understand and influence the confidence-level and trust of the general public during an outbreak can help public health officials to slow the spread of the disease.
+        <br>
+        </p>
+
+    </div>
+  </div>
+<div class="container">
+  <center><h2 class="text-primary bg-gradient-primary">How does it works?</h2></center>
+    <div class="container">
+    <div class="row">
+            <div class="col-sm-4"><img src="https://arun4blog.files.wordpress.com/2018/06/tweet-live.jpg?w=584&h=389" class="img-thumbnail"  alt=""></div>
+            <div class="col-sm-4"><img src="https://miro.medium.com/max/500/1*QNtpWNresupHbiV7Xe59gg.png" class="img-thumbnail" alt=""></div>
+            <div class="col-sm-4"><img src="https://d1sjtleuqoc1be.cloudfront.net/wp-content/uploads/2019/04/25112909/shutterstock_1073953772.jpg" class="img-thumbnail" alt=""></div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+            <center><div class="col-sm-4 text-info">FETCHING LIVE TWEETS</div></center>
+            <center><div class="col-sm-4 text-info">USE RANDOM FOREST ALGORITHM</div></center>
+            <center><div class="col-sm-4 text-info">PREDICTING SENTIMENTS</div></center>
+    </div>
+    </div>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <center><h2 class="text-primary bg-gradient-primary">Compared with other algorithms</h2>
+    <div class="container">
+      <img src="/media/app/graph.jpg" style="width:1000px;height:600px;" >
+    </div>
+    </center>
+  <center>
+    <h3 style="color:#ff0000;">Click the below button to start your predictions</h3>
+    <form class="" action="{% url 'index' %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <br><button type="submit" name="button" class="btn btn-success btn-lg">Get Started</button>
+  </form></center>
+  </div>
+</div>
+</body>
+</html>

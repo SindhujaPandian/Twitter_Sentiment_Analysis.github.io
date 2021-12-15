@@ -24,10 +24,11 @@ from django.conf.urls import include,url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    path('',views.index,name="index"),
+    path('',views.home,name="home"),
+    path('index/',views.index,name="index"),
     path('result/',views.result,name="result"),
-    
+    path('accuracy/',views.accuracy,name="accuracy"),
+    path('code/',views.code,name="code"),
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]

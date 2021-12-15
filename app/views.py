@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from app.forms import userForm
 from app.models import userModel
-from app.twitter_live_data import mlmodel
+from app.sentiment import mlmodel
 # Create your views here.
+def home(request):
+    return render(request,'app/home.html',{})
 
 def index(request):
     form = userForm()
@@ -30,3 +32,8 @@ def result(request):
 
     return render(request,'app/result.html',res_dict)
 
+def accuracy(request):
+    return render(request,'app/accuracy.html',{})
+
+def code(request):
+    return render(request,'app/code.html',{})

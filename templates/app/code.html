@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Source Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style media="screen">
+      .div-code{
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
+      </div>
+      <div class="nav navbar-nav navbar-left">
+        <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'home' %}" style="color:#ffffff;">Home</a></li>
+            <li><a href="{% url 'index' %}" style="color:#ffffff;">Predict</a></li>
+            <li><a href="{% url 'accuracy' %}" style="color:#ffffff;">Accuracy</a></li>
+            <li><a href="{% url 'code' %}" style="color:#ffffff;">Source Code</a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <center>  <h2 class="text-primary bg-gradient-primary">Twitter Sentiment analysis</h2>
+        <br>
+        <div class="div-code">
+            <br>
+            <div class="container">
+              <form class="" action="https://github.com/SindhujaPandian/Final_Year_Project" method="post">
+              <blockquote class="blockquote">
+                <p class="mb-0">
+                    Twitter sentiment analysis is a method of analyzing the emotions from tweets.
+                    These tweets are helpful in extracting the sentimental values from user.
+                    The proposed system is to analyze the sentiment of people using twitter API, Random Forest and predict the sentiment as positive, negative, neutral.
+                    You can download the source code by clicking the download button.
+                </p>
+                <footer class="blockquote-footer">Created by <cite title="Source Title">Sindhuja Pandian and Sangeetha</cite></footer>
+              {{ form.as_p }}
+              {% csrf_token %}
+              <br>
+              <img src="https://www.netclipart.com/pp/m/243-2435047_computer-icons-software-developer-computer-software-sofware-development.png" style="width:128px;height:128px;" alt=""><br><br>
+            <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+            </blockquote>
+            </form>
+          </div>
+        </div>
+    </center>
+  </div>
+</div>
+  </body>
+</html>

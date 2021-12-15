@@ -27,7 +27,14 @@
       <div class="nav navbar-nav navbar-left">
         <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
       </div>
-     
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'home' %}" style="color:#ffffff;">Home</a></li>
+            <li><a href="{% url 'index' %}" style="color:#ffffff;">Predict</a></li>
+            <li><a href="{% url 'accuracy' %}" style="color:#ffffff;">Accuracy</a></li>
+            <li><a href="{% url 'code' %}" style="color:#ffffff;">Source Code</a></li>
+        </ul>
+      </div>
     </div>
     </nav>
 
