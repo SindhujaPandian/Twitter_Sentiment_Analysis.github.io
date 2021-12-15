@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from app.forms import userForm
-from app.models import userModel
 from app.sentiment import mlmodel
 # Create your views here.
 def home(request):
@@ -13,8 +12,6 @@ def index(request):
 def result(request):
     username = request.POST['username']
     keyword = request.POST['keyword']
-    usermodel = userModel(username=username,keyword=keyword)
-    #usermodel.save()
     print('-----------------------------')
     print(username)
     print(keyword)
