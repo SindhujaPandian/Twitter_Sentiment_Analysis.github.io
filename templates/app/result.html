@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+body {
+  background-image: url('https://www.teahub.io/photos/full/35-358102_twitter-bird-mosaic-wallpapers-twitter-bird.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg-div {
+        background-color: #ffffff;
+    }
+</style>
+  </head>
+  <body >
+    <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
+      </div>
+      <div class="nav navbar-nav navbar-left">
+        <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
+      </div>
+      
+    </div>
+    </nav>
+    <div class="container">
+      <div class="bg-div">
+        <br><br>
+      <center>
+        <h2 class="display-1 text-primary">TWITTER SENTIMENT ANALYSIS</h2><hr><br><br>
+            {% if result == "NEGATIVE" %}
+                    <h3 style="color:red;font-size:50px;" class="text-danger">NEGATIVE<br><h3>
+                    <img src="https://icon-library.com/images/unhappy-icon/unhappy-icon-15.jpg" style="width:128px;height:128px;" class="img-thumbnail" alt="">
+            {% elif result == "NEUTRAL" %}
+                    <h3 style="color:orange;font-size:50px;" class="text-danger"> NEUTRAL<br><h3>
+                    <img src="https://cdn3.iconfinder.com/data/icons/universal-web-mobile-6-9/65/298-512.png" style="width:128px;height:128px;" class="img-thumbnail" alt="">
+            {% elif result == "POSITIVE" %}
+                    <h3 style="color:green;font-size:50px;" class="text-danger">POSITIVE<br><h3>
+                    <img src="https://cdn1.iconfinder.com/data/icons/round-color-icon/3/30-512.png" style="width:128px;height:128px;" class="img-thumbnail" alt="">
+            {% endif %}
+            <br><br><br>
+            <h3 style="color:#ff0000;">Click the below button to see the accuracy of the Random Forest Model</h3>
+            <form class="" action="{% url 'accuracy' %}" method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <br><button type="submit" name="button" class="btn btn-success btn-lg">Accuracy</button>
+          </form>
+      </center>
+
+
+      </div>
+
+    </div>
+  </body>
+</html>

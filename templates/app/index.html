@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    body {
+      background-image: url('https://www.teahub.io/photos/full/35-358102_twitter-bird-mosaic-wallpapers-twitter-bird.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
+      </div>
+      <div class="nav navbar-nav navbar-left">
+        <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
+      </div>
+     
+    </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <center>  <h2 class="text-primary bg-gradient-primary">Twitter Sentiment analysis</h2></center><br><br>
+        <div class="form-group">
+      <form method="post" action="{% url 'result' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><br><br>  <center><button type="submit" name="button" class="btn btn-success btn-lg">Predict</button></center>
+      </form>
+    </div>
+      </div>
+    </div>
+  </body>
+</html>
