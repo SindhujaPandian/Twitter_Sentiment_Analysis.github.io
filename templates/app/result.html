@@ -2,9 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>result</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <style>
+<style>
 body {
   background-image: url('https://www.teahub.io/photos/full/35-358102_twitter-bird-mosaic-wallpapers-twitter-bird.jpg');
   background-repeat: no-repeat;
@@ -17,34 +15,12 @@ body {
 </style>
   </head>
   <body >
-    <nav class="navbar-inverse navbar navbar-light" style="background-color: #3ab3e0;">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class='navbar-toggle' data-toggle="collapse" data-target="#menu" name="button">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a href="#"><img src="https://www.pngkey.com/png/full/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" class="img-responsive" style="width:60px;" alt=""/></a>
-      </div>
-      <div class="nav navbar-nav navbar-left">
-        <h3 class="font-weight-bold bg-light text-dark" style="color:#ffffff;">Twitter Sentiment analysis</h3>
-      </div>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'home' %}" style="color:#ffffff;">Home</a></li>
-            <li><a href="{% url 'index' %}" style="color:#ffffff;">Predict</a></li>
-            <li><a href="{% url 'accuracy' %}" style="color:#ffffff;">Accuracy</a></li>
-            <li><a href="{% url 'code' %}" style="color:#ffffff;">Source Code</a></li>
-        </ul>
-      </div>
-    </div>
-    </nav>
+   
     <div class="container">
       <div class="bg-div">
         <br><br>
       <center>
-        <h2 class="display-1 text-primary">TWITTER SENTIMENT ANALYSIS</h2><hr><br><br>
+        <h2>TWITTER SENTIMENT ANALYSIS</h2><hr><br><br>
             {% if result == "NEGATIVE" %}
                     <h3 style="color:red;font-size:50px;" class="text-danger">NEGATIVE<br><h3>
                     <img src="https://icon-library.com/images/unhappy-icon/unhappy-icon-15.jpg" style="width:128px;height:128px;" class="img-thumbnail" alt="">
@@ -63,25 +39,8 @@ body {
             <br><button type="submit" name="button" class="btn btn-success btn-lg">Accuracy</button>
           </form>
       </center>
-
-
       </div>
-<!--
-        <center>
-            <h2 class="display-1 text-primary">TWITTER SENTIMENT ANALYSIS</h2><br><br>
-          <div class="jumbotron">
-            <h1 style="color:red;font-size:50px;" class="text-danger">{{ NEG }}<br>
-              https://cdn3.iconfinder.com/data/icons/universal-web-mobile-6-9/65/298-512.png
-             <h1>
-            <h1 style="color:orange;font-size:50px;" class="text-danger">{{ NEU }}<br>
-              <img src="{{result_NEUTRAL}}" alt="" class="img-thumbnail">
-            <h1>
-            <h1 style="color:green;font-size:50px;" class="text-danger">{{ POS }}<br>
-              <img src="{{result_POSITIVE}}" alt="" class="img-thumbnail">
-            <h1>
-          </div>
-        </center>
--->
+
     </div>
   </body>
 </html>
