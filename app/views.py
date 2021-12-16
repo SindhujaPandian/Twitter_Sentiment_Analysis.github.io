@@ -10,15 +10,7 @@ def index(request):
     return render(request,'app/index.html',{'form':form})
 
 def result(request):
-    username = request.POST['username']
-    keyword = request.POST['keyword']
-    result = mlmodel(keyword)
-    if(result=='NEUTRAL'):
-        res_dict={'result':'NEUTRAL'}
-    elif(result=='POSITIVE'):
-        res_dict={'result':'POSITIVE'}
-    elif(result=='NEGATIVE'):
-        res_dict={'result':'NEGATIVE'}
+    res_dict={'result':'NEGATIVE'}
     return render(request,'app/result.html',res_dict)
 
 def accuracy(request):
