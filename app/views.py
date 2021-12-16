@@ -13,7 +13,7 @@ def result(request):
     username = request.POST['username']
     keyword = request.POST['keyword']
     result = mlmodel(keyword)
-    res_dict={'result':result}
+    res_dict={'result':'NEGATIVE'}
     return render(request,'app/result.html',res_dict)
 
 def accuracy(request):
