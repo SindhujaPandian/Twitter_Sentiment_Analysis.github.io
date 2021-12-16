@@ -35,18 +35,12 @@ def mlmodel(inp):
 
         elif pos == neg:
             neutral += 1
-
-
-    print(positive)
-    print(negative)
-    print(neutral)
-
     if(positive>negative):
         if(positive>neutral):
-            return("POSITIVE")
+            return "POSITIVE" 
         else:
-            return("NEUTRAL")
+            return "NEUTRAL" 
     elif(negative>neutral):
-        return("NEGATIVE")
+        return "NEGATIVE"
     else:
-        return("NEUTRAL")
+        return "NEUTRAL"
