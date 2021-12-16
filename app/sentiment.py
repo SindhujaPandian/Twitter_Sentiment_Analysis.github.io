@@ -2,15 +2,14 @@ from textblob import TextBlob
 import tweepy
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-consumerKey = "kcECETl2cHMHFvcmZg00JJ7ox"
-consumerSecret = "bIgz1L54uQGYFAHIZynzj4GY33cAL3spPSO6v4n6dMbOauk0RH"
-accessToken = "1113114787473371136-UIFWlK19yFNw7XEQhSft1jfiHbzhce"
-accessTokenSecret = "rVson5wuySWh2qejUDxtdeZQJJGmeAJdHcOCyInd3CZao"
-auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
-auth.set_access_token(accessToken, accessTokenSecret)
-api = tweepy.API(auth)
-
 def mlmodel(inp):
+    consumerKey = "kcECETl2cHMHFvcmZg00JJ7ox"
+    consumerSecret = "bIgz1L54uQGYFAHIZynzj4GY33cAL3spPSO6v4n6dMbOauk0RH"
+    accessToken = "1113114787473371136-UIFWlK19yFNw7XEQhSft1jfiHbzhce"
+    accessTokenSecret = "rVson5wuySWh2qejUDxtdeZQJJGmeAJdHcOCyInd3CZao"
+    auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
+    auth.set_access_token(accessToken, accessTokenSecret)
+    api = tweepy.API(auth)
     noOfTweet = 100
     tweets = tweepy.Cursor(api.search, q=inp).items(noOfTweet)
     positive = 0
